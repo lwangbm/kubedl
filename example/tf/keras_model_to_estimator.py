@@ -76,7 +76,7 @@ def main(args):
         tf.keras.layers.Conv2D(input_shape=(256,256,1), filters=8, kernel_size=3,
                             strides=2, activation='relu', name='Conv1'),
         tf.keras.layers.Flatten(),
-        tf.keras.layers.Dense(10, name='Dense'),
+        tf.keras.layers.Dense(100, name='Dense'),
         tf.keras.layers.Dense(1, activation='sigmoid')
     ])
     # model = tf.keras.Sequential()
