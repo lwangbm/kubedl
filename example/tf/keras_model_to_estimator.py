@@ -28,7 +28,7 @@ from tensorflow.contrib.saved_model.python.saved_model import keras_saved_model
 
 def input_fn():
     x = np.random.random((32, 256, 256, 1))
-    y = np.random.randint(2, size=(1024, 1))
+    y = np.random.randint(2, size=(32, 1))
     x = tf.cast(x, tf.float32)
     dataset = tf.data.Dataset.from_tensor_slices((x, y))
     dataset = dataset.repeat(100)
