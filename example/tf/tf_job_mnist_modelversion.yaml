@@ -8,7 +8,7 @@ spec:
   modelVersion:
     modelName: mymodel
     # The dockerhub repo to push the generated image
-    imageRepo: jianhe6/mymodel
+    imageRepo: lwangbm/mymodel
     storage:
       # Use hostpath, NFS is also supported.
       localStorage:
