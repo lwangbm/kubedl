@@ -6,7 +6,7 @@ spec:
   framework: TFServing
   predictors:
     - name: model-predictor
-      modelVersion: mv-tf-distributed-f3ecc
+      modelVersion: mv-tf-distributed-30988
       modelPath: /kubedl-model
       replicas: 1
       batching:
