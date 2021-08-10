@@ -73,7 +73,8 @@ def main(args):
 
     # Define a Keras Model.
     model = tf.keras.Sequential()
-    model.add(tf.keras.layers.Dense(16, activation='relu', input_shape=(10,)))
+    model.add(tf.keras.layers.Dense(256, activation='relu', input_shape=(10,)))
+    model.add(tf.keras.layers.Dense(256, activation='relu', input_shape=(10,)))
     model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
 
     # Compile the model.
