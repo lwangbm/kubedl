@@ -24,7 +24,7 @@ spec:
         spec:
           containers:
             - name: tensorflow
-              image: kubedl/tf-mnist-estimator-api:v0.1
+              image: kubedl/tf-mnist-estimator-api:v0.1beta
               imagePullPolicy: Always
               command:
                 - "python"
