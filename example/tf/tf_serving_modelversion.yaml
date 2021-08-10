@@ -22,7 +22,7 @@ spec:
                 - --model_base_path=/kubedl-model/
               command:
                 - /usr/bin/tensorflow_model_server
-              image: tensorflow/serving:1.11.1
+              image: kubedl/morphling-tf-model:demo-cv
               imagePullPolicy: IfNotPresent
               ports:
                 - containerPort: 9000
