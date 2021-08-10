@@ -27,7 +27,7 @@ from tensorflow.contrib.saved_model.python.saved_model import keras_saved_model
 
 
 def input_fn():
-    x = np.random.random((1024, 10))
+    x = np.random.random((1024, 28, 28, 1))
     y = np.random.randint(2, size=(1024, 1))
     x = tf.cast(x, tf.float32)
     dataset = tf.data.Dataset.from_tensor_slices((x, y))
@@ -72,9 +72,15 @@ def main(args):
     print('Using %s to store checkpoints.' % model_dir)
 
     # Define a Keras Model.
-    model = tf.keras.Sequential()
-    model.add(tf.keras.layers.Dense(1024, activation='relu', input_shape=(10,)))
-    model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
+    model = tf.keras.Sequential([
+        tf.keras.layers.Conv2D(input_shape=(28,28,1), filters=8, kernel_size=3,
+                            strides=2, activation='relu', name='Conv1'),
+        tf.keras.layers.Flatten(),
+        tf.keras.layers.Dense(10, name='Dense')
+    ])
+    # model = tf.keras.Sequential()
+    # model.add(tf.keras.layers.Dense(1024, activation='relu', input_shape=(10,)))
+    # model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
 
     # Compile the model.
     optimizer = tf.train.GradientDescentOptimizer(0.2)
